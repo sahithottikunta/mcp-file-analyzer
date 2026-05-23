@@ -6,7 +6,7 @@ import os
 mcp = FastMCP("master-file-analyzer")
 
 # =====================================================================
-# 🛠️ SECTION 1: TOOLS (AI Actions - What the AI can DO)
+#  SECTION 1: TOOLS (AI Actions - What the AI can DO)
 # =====================================================================
 
 @mcp.tool()
@@ -47,7 +47,7 @@ def get_api_status() -> dict:
     }
 
 # =====================================================================
-# 📂 SECTION 2: RESOURCES (AI Read-Only Data - What the AI can READ)
+# SECTION 2: RESOURCES (AI Read-Only Data - What the AI can READ)
 # =====================================================================
 
 @mcp.resource("doc://api/overview")
@@ -68,7 +68,7 @@ def api_endpoints() -> str:
 """
 
 # =====================================================================
-# 💬 SECTION 3: PROMPTS (AI Templates - How the AI should BEHAVE)
+# SECTION 3: PROMPTS (AI Templates - How the AI should BEHAVE)
 # =====================================================================
 
 @mcp.prompt()
