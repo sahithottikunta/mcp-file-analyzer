@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "master-analyzer": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "./file_analyzer.py"
+      ],
+      "env": {}
+    }
+  }
+}
