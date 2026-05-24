@@ -1,75 +1,70 @@
 Markdown
-# 🧮 Ultimate Master File Analyzer & Docs MCP Server
+# 📂 Self-Contained Local MCP File Analyzer (Server + Client Setup)
 
-A comprehensive, all-in-one Model Context Protocol (MCP) server built with Python using the `FastMCP` framework. This server establishes a unified architecture combining actionable agent tools, context-driven read-only data resources, and instructional system prompt templates over standard input/output (`stdio`) channels.
-
----
-
-## 🚀 Unified Server Features
-
-### 1. 🛠️ AI Tools (Actions)
-- **`list_directory(path: str)`**: Lists all file and folder names inside a specified directory path.
-- **`read_file(path: str)`**: Reads and extracts the complete text content of a local text file.
-- **`count_lines(path: str)`**: Scans a target file and counts its total number of lines.
-- **`get_api_status()`**: Returns a real-time dictionary payload detailing systemic uptime metrics.
-
-### 2. 📂 AI Resources (Read-Only Data Context)
-- **`doc://api/overview`**: An entry-point markdown document detailing the architecture of the file analyzer engine.
-- **`doc://api/endpoints`**: A dynamic mapping dictionary indexing all operational tool routes.
-
-### 3. 💬 AI Prompts (Persona Templates)
-- **`code_review_prompt(language)`**: Configures connected LLM agents into elite senior engineering personas tailored for scanning files.
-- **`security_audit_prompt()`**: Imbues language models with strict security parameters to audit paths for credential leaks or injection risks.
+This repository contains a fully self-contained **Model Context Protocol (MCP)** ecosystem. It bundles both the execution backend (**FastMCP Python Server**) and the agent integration layout (**Project-Scoped Client Config**) into a single, plug-and-play repository workspace.
 
 ---
 
-## ⚙️ Local Installation & Environment Setup
+## 🏗️ Architecture Design
 
-### 1. Prerequisites
-- **Python 3.10+**
-- **Node.js & npm** (Required to run the visual testing harness)
+Unlike global implementations, this project utilizes a **Project-Scoped configuration (`.mcp.json`)**. When an MCP-compatible agent (like Claude Code) is launched inside this root directory, it automatically auto-discovers and spins up the local Python server as a subprocess over standard input/output (`stdio`) channels.
 
-### 2. Workspace Sandbox Isolation
-Clone this project, launch VS Code inside the project directory, and initialize a local virtual environment:
+---
 
+## 🚀 Repository Ecosystem Features
+
+### 1. 🛠️ Python MCP Server (`file_analyzer.py`)
+Exposes direct system manipulation capabilities safely to the AI client:
+- **`list_directory(path: str)`**: Inspects and lists all items within a local workspace path.
+- **`read_file(path: str)`**: Reads and streams target text file content directly to the model.
+- **`count_lines(path: str)`**: Scans a script or document to return its total line count.
+- **`get_api_status()`**: Returns operational health metrics of the running server instance.
+
+### 2. 📂 Context Resources
+Provides static data vectors that an AI agent can scan for operational context:
+- `doc://api/overview` - Architectural guide to the local script analyzer framework.
+- `doc://api/endpoints` - Operational registry tracking active tool schemas.
+
+### 3. 💬 Persona Prompts
+Pre-configured engineering blueprints to instantly shift agent behavior:
+- `code_review_prompt` - Restructures the client into a strict senior code-reviewing assistant.
+
+### 4. 🤖 Connected Client Mapping (`.mcp.json`)
+The infrastructure bridge. It maps the local relative path execution instructions so any local machine running Claude Code can instantly boot the server without manual linking setups.
+
+---
+
+## ⚙️ Quickstart: How to Use this Local Repo
+
+### 1. Initialize Local Sandbox Environment
+Open your terminal in this directory and isolate your dependencies:
 ```bash
-# Create your local virtual environment sandbox folder
+# Create and activate your localized virtual environment
 python -m venv .venv
+.venv\Scripts\activate      # On Mac/Linux use: source .venv/bin/activate
 
-# Activate the sandbox (Windows PowerShell)
-.venv\Scripts\activate
-
-# Activate the sandbox (Mac/Linux)
-source .venv/bin/activate
-3. Install Dependencies
-Install the required Model Context Protocol core platform SDK and its developer dependencies:
-
-Bash
+# Install the underlying protocol SDK framework
 pip install "mcp[cli]"
-🔬 Local Inspection & Visual Testing
-Because MCP servers utilize specialized text streams to interact directly with large language models, standard python execution scripts will sit idle in the terminal. Instead, boot up the official visual validation suite:
+2. Immediate Agent Execution
+Because the client-side .mcp.json file is tracked within this repo, you don't need to run any claude mcp add setup commands. Simply launch your agent interface inside this folder:
 
 Bash
-npx @modelcontextprotocol/inspector python file_analyzer.py
-Dashboard Settings Configuration:
-Once the testing engine loads in your web browser, match the parameter inputs inside the left panel configuration rail:
-
-Transport Type: STDIO
-
-Command: python
-
-Arguments: file_analyzer.py
-
-Click Connect to load up the interactive playground where you can test your tools, read your markdown resource data feeds, and test out prompt personas!
+claude
+The agent will parse the localized project layout, bind the tools automatically, and accept operational requests seamlessly! (e.g., "Review my code files and count the total lines in this repository").
 
 
 ---
 
-### Step 2: Push the Final Documentation to GitHub
+### Step 2: Push the Final Update to Git
 
-Now that your README is completely finished, run this quick final sequence in your active terminal to push your changes up to GitHub:
+Since we just cleared our terminal of the Vim blocker and successfully merged, your terminal is completely free. Run these three simple commands to sync the fresh `README.md` layout up to GitHub:
 
 ```bash
+# 1. Stage the updated README file
 git add README.md
-git commit -m "docs: finalize master readme documenting tools, resources, and prompts"
-git push
+
+# 2. Log a descriptive save point
+git commit -m "docs: adapt readme to accurately describe self-contained local project scope"
+
+# 3. Ship it out to the cloud
+git push origin main
